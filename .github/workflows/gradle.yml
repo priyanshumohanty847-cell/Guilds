@@ -46,3 +46,9 @@ jobs:
 
       - name: Build shaded plugin
         run: ./gradlew shadowJar --no-daemon --stacktrace --no-configuration-cache
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Guilds-Jar
+          path: build/libs/*.jar
